@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react"
+  },
+  "exclude": ["spec/", "**/*.spec.ts", "**/*.spec.tsx", "**/*.stories.tsx","index.d.ts"]
+}

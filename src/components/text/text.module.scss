@@ -1,0 +1,35 @@
+@import '../../styles/index.scss';
+
+span.root {
+  @each $key, $value in $colors {
+    &.color-#{$key} {
+      color: $value;
+    }
+  }
+
+  @each $key, $value in $fontSizes {
+    &.size-#{$key} {
+      font-size: $value;
+    }
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &.justify {
+    text-align: justify;
+  }
+
+  &.left {
+    text-align: left;
+  }
+
+  &.right {
+    text-align: right;
+  }
+}

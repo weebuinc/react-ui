@@ -1,0 +1,17 @@
+$base-size: var(--base-size);
+
+$fontSizes: (
+  'xSmall': calc(0.75 * $base-size),
+  'small': calc(0.875 * $base-size),
+  'medium': $base-size,
+  'large': calc(1.5 * $base-size),
+  'xLarge': calc(2 * $base-size)
+);
+
+$spaces: (
+  'xSmall': calc(0.5 * $base-size),
+  'small': calc(0.75 * $base-size),
+  'medium': $base-size,
+  'large': calc(1.5 * $base-size),
+  'xLarge': calc(2 * $base-size)
+);

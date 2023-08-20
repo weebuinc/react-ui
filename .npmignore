@@ -1,0 +1,16 @@
+npm-debug.log
+*.env*
+.gitignore
+.prettierignore
+.prettierrc.json
+.swcrc
+jest.config.js
+tsconfig.build.json
+tsconfig.json
+.coverage/
+.vscode/
+.storybook/
+.github/
+docs/
+docs-build/
+stories/

@@ -1,0 +1,19 @@
+@import './theme.scss';
+
+$disabled-color: var(--disabled-color);
+$error-color: var(--error-color);
+$info-color: var(--info-color);
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$success-color: var(--success-color);
+$warning-color: var(--warning-color);
+
+$colors: (
+  'disabled': $disabled-color,
+  'error': $error-color,
+  'info': $info-color,
+  'primary': $primary-color,
+  'secondary': $secondary-color,
+  'success': $success-color,
+  'warning': $warning-color
+);

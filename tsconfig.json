@@ -1,0 +1,21 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./lib",
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "declaration": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "lib": [ "dom", "dom.iterable", "esnext"],
+    "isolatedModules": true,
+    "strict": false,
+    "baseUrl": "./src",
+    "jsx": "react"
+  },
+  "include": ["**/*.d.ts","src/index.ts","src/types/index.ts", "**/*.spec.ts", "**/*.spec.tsx", "index.d.ts"]
+}
