@@ -1,14 +1,14 @@
 import './scss';
 import React, { FC } from 'react';
 import cx from 'classnames';
-import { Props, ColumnProps, RowProps } from './types';
+import { FlexProps, FlexColumnProps, FlexRowProps } from './types';
 
 import Column from './FlexColumn';
 import Row from './FlexRow';
 
 import styles from './flex.module.scss';
 
-export const Flex: FC<Props> & { Column: FC<ColumnProps>; Row: FC<RowProps> } = ({
+export const Flex: FC<FlexProps> & { Column: FC<FlexColumnProps>; Row: FC<FlexRowProps> } = ({
   align = 'top',
   children,
   className,

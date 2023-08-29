@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { RowProps } from './types';
+import { FlexRowProps } from './types';
 
 import Flex from './Flex';
-export const FlexRow: FC<RowProps> = (props) => (
+export const FlexRow: FC<FlexRowProps> = (props) => (
   <Flex
     {...props}
     direction={'row'}

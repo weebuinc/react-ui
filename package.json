@@ -2,7 +2,7 @@
   "name": "@weebu/react-ui",
   "version": "0.0.0",
   "description": "Weebu React UI Components",
-  "main": "lib/cjs/index.js",
+  "main": "lib/index.js",
   "module": "lib/esm/index.js",
   "type": "module",
   "types": "index",

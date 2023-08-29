@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { ColumnProps } from './types';
+import { FlexColumnProps } from './types';
 
 import Flex from './Flex';
-export const FlexColumn: FC<ColumnProps> = (props) => (
+export const FlexColumn: FC<FlexColumnProps> = (props) => (
   <Flex
     {...props}
     direction={'column'}

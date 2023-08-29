@@ -1,7 +1,7 @@
 import type { CSSProperties, PropsWithChildren } from 'react';
 import { AlignProp, DirectionProp, HtmlProps, JustifyProp, SizeProp, StyleProps } from '../../types';
 
-export interface Props extends PropsWithChildren, StyleProps {
+export interface FlexProps extends PropsWithChildren, StyleProps {
   align?: AlignProp;
   direction: DirectionProp;
   divProps?: HtmlProps<HTMLDivElement>;
@@ -16,5 +16,5 @@ export interface Props extends PropsWithChildren, StyleProps {
   wrap?: boolean | CSSProperties['flexWrap'];
 }
 
-export type ColumnProps = Omit<Props, 'direction'>;
-export type RowProps = Omit<Props, 'direction'>;
+export type FlexColumnProps = Omit<FlexProps, 'direction'>;
+export type FlexRowProps = Omit<FlexProps, 'direction'>;
