@@ -1,11 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import util from 'util'
 
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import ts from 'rollup-plugin-ts'
-import { dts } from 'rollup-plugin-dts';
 
 // To handle css files
 import postcss from 'rollup-plugin-postcss';
@@ -30,6 +28,14 @@ const plugins =  [
   image()
 ];
 
+/** @type {import('rollup/dist/rollup').InputPluginOption[]} */
+const typesPlugins = [
+  peerDepsExternal(),
+  resolve(),
+  commonjs(),
+  ts({ tsconfig: './tsconfig.types.json' })
+]
+
 const external = (/**@type {string}*/id) => {
   // avoid compile error with scss.d.ts files
   const name = id.split('/').pop()
@@ -45,7 +51,7 @@ const getComponentConfigs =  () => {
     input: path.join('src', 'components', dir, 'index.ts'),
     output: [
       {
-        dir: path.resolve(path.dirname(packageJson.main), dir),
+        dir: path.resolve(path.dirname(packageJson.main),'components', dir),
         format: 'cjs',
         sourcemap: true
       }
@@ -58,8 +64,6 @@ const getComponentConfigs =  () => {
 
   //console.info(util.inspect(configs, false, 5))
 }
-
-getComponentConfigs();
 
 /** @type {import('rollup/dist/rollup').RollupOptions[]} */
 const configs = [
@@ -79,6 +83,30 @@ const configs = [
     ],
     external,
     plugins
+  },
+  {
+    input: 'src/types/index.ts',
+    output: {
+      dir: path.resolve(path.dirname(packageJson.main), 'types'),
+      format: 'cjs'
+    },
+    external,
+    plugins: typesPlugins
+  },
+  {
+    input: 'src/tests/index.ts',
+    output: {
+      dir: path.resolve(path.dirname(packageJson.main), 'tests'),
+      format: 'cjs',
+      sourcemap: true
+    },
+    external,
+    plugins: [
+      peerDepsExternal(),
+      resolve(),
+      commonjs(),
+      ts({ tsconfig: './tsconfig.build.json', include: ['src/**/*.ts', 'src/**/*.tsx'] })
+    ]
   },
   ...getComponentConfigs()
 ]
